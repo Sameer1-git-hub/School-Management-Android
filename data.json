@@ -1,0 +1,51 @@
+hiiiiiiiiiiiiii [
+    {
+        "class_id": [
+            1,
+            2,
+            3
+        ],
+        "id": 1,
+        "name": "English"
+    },
+    {
+        "class_id": [
+            1,
+            2,
+            3
+        ],
+        "id": 3,
+        "name": "Mathematics"
+    },
+    {
+        "class_id": [
+            1,
+            2,
+            3
+        ],
+        "id": 2,
+        "name": "Urdu"
+    }
+]
+
+
+hiiiiiiiiiiiiii [
+    {
+        "class_model": {
+            "id": 1,
+            "name": "7"
+        },
+        "id": 115,
+        "section_model": {
+            "id": 1,
+            "name": "A"
+        },
+        "subject_model": {
+            "id": 1,
+            "name": "English"
+        }
+    }
+]
+
+
+

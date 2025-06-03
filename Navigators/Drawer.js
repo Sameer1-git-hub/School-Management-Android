@@ -7,6 +7,8 @@ import HomeIcon from "react-native-vector-icons/AntDesign"
 import CustomDrawer from '../Components/Drawer/CustomDrawer';
 import Settings from '../Screens/DrawerScreens/Settings';
 import LoadingScreen from '../Components/Home/LoadingScreen';
+import { ImageBackground, StyleSheet, Text, View, TextInput, Dimensions, TouchableOpacity, ScrollView } from 'react-native'
+
 
 
 const Drawer = createDrawerNavigator();
@@ -15,19 +17,25 @@ const MyDrawer = ({ role, isLoading }) => {
 
     if (isLoading) return <LoadingScreen />
 
-    const StackByRole = () => {
-        if (role === "super admin")
-            return <AdminStack />
-        if (role === "admin")
-            return <AdminStack />
-        if (role === "teacher")
-            return <TeacherStack />
-        if (role === "student")
-            return <StudentStack />
-    }
+    // const StackByRole = () => {
+    //     if (role === "super admin")
+    //         return <AdminStack />
+    //     if (role === "admin")
+    //         return <AdminStack />
+    //     if (role === "teacher")
+    //         return <TeacherStack />
+    //     if (role === "student")
+    //         return <StudentStack />
+    // }
 
-
-
+const StackByRole = () => {
+        if (role === "super admin") return <AdminStack />;
+        if (role === "admin") return <AdminStack />;
+        if (role === "teacher") return <TeacherStack />;
+        if (role === "student") return <StudentStack />;
+        return <Text>No valid role</Text>;
+    };
+console.log("Drawer Role:", role)
     return (
         <Drawer.Navigator
             initialRouteName="Home"

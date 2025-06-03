@@ -12,11 +12,15 @@ import store from './store';
 import { useDispatch, useSelector } from 'react-redux';
 import { setIsInternetConnected, setIsInternetReachable } from './store/slices/NetworkSlice';
 import NetInfo from "@react-native-community/netinfo";
+import userData from './userdata';
+
 
 
 const AppContent = () => {
+  
 
   const { UserExists, isLoading, UserRole, token, setUserRole } = useAuth();
+  console.log(useAuth)
   const { isInternetConnected, isInternetReachable } = useSelector(state => state.connection)
   const dispatch = useDispatch()
 
@@ -26,13 +30,14 @@ const AppContent = () => {
     
     const getData = async () => {
       try {
-        const response = await fetch("https://shaheer.firefly-techsolutions.com/auth/verifyToken", {
+        const response = await fetch("http://your-ip:5000/auth/verifyToken", {
           method: "post",
           headers: {
             'Authorization': 'Bearer ' + token
           }
         })
         const result = await response.json()
+        console.log(result)
 
         if (result.statusCode == 200) {
           if (result) {
@@ -88,7 +93,7 @@ const AppContent = () => {
   //   return <NoConnectionScreen />
   // }
 
-  return UserExists ? <MyDrawer role={UserRole} /> : <AuthStack />;
+  return UserExists ? <MyDrawer role={UserRole } /> : <AuthStack />;
 };
 
 

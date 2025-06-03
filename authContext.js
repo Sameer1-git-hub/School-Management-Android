@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
     const [token, setToken] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
-
+console.log(UserRole)
     ////////   CLEANING ASYNC STORAGE   ////////
     const removeAllData = async () => {
         try {

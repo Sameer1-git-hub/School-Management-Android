@@ -1,5 +1,5 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
-// import { API_URL } from "@env"
+import { API_URL } from "@env"
 
 const initialState = {
   grade: [],
@@ -194,7 +194,7 @@ export const fetchClasses = createAsyncThunk(
   async (_, {getState, dispatch}) => {
     try {
       const response = await fetch(
-        `${process.env.API_URL}/attendance/getClass`,
+        `${API_URL}/attendance/getClass`,
       );
       const result = await response.json();
       if (result.statusCode !== 200) {

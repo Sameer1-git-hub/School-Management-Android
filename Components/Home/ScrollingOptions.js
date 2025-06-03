@@ -21,7 +21,9 @@ const ScrollingOptions = () => {
   const dispatch = useDispatch();
 
   const handleNavigation = route => {
-    // console.log(route, UserRole, modalVisible)
+    console.log(route);
+
+    console.log(route, UserRole, modalVisible);
     if (route === 'Attendance' && UserRole === 'teacher') {
       setModalVisble(true);
     } else {
@@ -94,90 +96,129 @@ const ScrollingOptions = () => {
             <Text style={styles.Iconname}>Assignments</Text>
           </TouchableOpacity>
 
-          {/* <TouchableOpacity
-                        onPress={() => { handleNavigation("Chats"); }}
-                        style={styles.options}>
-                        <Image
-                            style={styles.optionImage}
-                            source={require("../../Assets/home/chats.png")} />
-                        <Text style={styles.Iconname}>Chats</Text>
-                    </TouchableOpacity> */}
-          {/* 
-                    <TouchableOpacity 
-                    onPress={()=>{handleNavigation("Fee")}}
-                    style={styles.options}>
-                        <Image
-                            style={styles.optionImage}
-                            source={require("../../Assets/home/fee.png")} />
-                        <Text style={styles.Iconname}>Fee</Text>
-                    </TouchableOpacity> */}
+          <TouchableOpacity
+            onPress={() => {
+              handleNavigation('Chats');
+            }}
+            style={styles.options}>
+            <Image
+              style={styles.optionImage}
+              source={require('../../Assets/home/chats.png')}
+            />
+            <Text style={styles.Iconname}>Chats</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => {
+              handleNavigation('Fee');
+            }}
+            style={styles.options}>
+            <Image
+              style={styles.optionImage}
+              source={require('../../Assets/home/fee.png')}
+            />
+            <Text style={styles.Iconname}>Fee</Text>
+          </TouchableOpacity>
         </View>
 
-        {/* <View style={styles.optionContainer}>
+        <View style={styles.optionContainer}>
+          <TouchableOpacity
+            style={styles.options}
+            onPress={() => {
+              handleNavigation('Quiz');
+            }}>
+            <Image
+              style={styles.optionImage}
+              source={require('../../Assets/home/quiz.png')}
+            />
+            <Text style={styles.Iconname}>Quiz</Text>
+          </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.options}>
-                        <Image
-                            style={styles.optionImage}
-                            source={require("../../Assets/home/quiz.png")} />
-                        <Text style={styles.Iconname}>Quiz</Text>
-                    </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.options}
+            onPress={() => {
+              dispatch(resetStudentState());
+              handleNavigation('Progress');
+            }}>
+            <Image
+              style={styles.optionImage}
+              source={require('../../Assets/home/progress.png')}
+            />
+            <Text style={styles.Iconname}>Progress</Text>
+          </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.options}>
-                        <Image
-                            style={styles.optionImage}
-                            source={require("../../Assets/home/progress.png")} />
-                        <Text style={styles.Iconname}>Progress</Text>
-                    </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.options}
+            onPress={() => {
+              handleNavigation('ClassWork');
+            }}>
+            <Image
+              style={styles.optionImage}
+              source={require('../../Assets/home/classwork.png')}
+            />
+            <Text style={styles.Iconname}>Classwork</Text>
+          </TouchableOpacity>
+        </View>
 
-                    <TouchableOpacity style={styles.options}>
-                        <Image
-                            style={styles.optionImage}
-                            source={require("../../Assets/home/classwork.png")} />
-                        <Text style={styles.Iconname}>Classwork</Text>
-                    </TouchableOpacity>
-                </View> */}
-        {/* 
-                <View style={styles.optionContainer}>
+        <View style={styles.optionContainer}>
+          <TouchableOpacity
+            style={styles.options}
+            onPress={() => {
+              handleNavigation('Gallery');
+            }}>
+            <Image
+              style={styles.optionImage}
+              source={require('../../Assets/home/gallery.png')}
+            />
+            <Text style={styles.Iconname}>Gallery</Text>
+          </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.options}>
-                        <Image
-                            style={styles.optionImage}
-                            source={require("../../Assets/home/gallery.png")} />
-                        <Text style={styles.Iconname}>Gallery</Text>
-                    </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.options}
+            onPress={() => {
+              handleNavigation('Learning');
+            }}>
+            <Image
+              style={styles.optionImage}
+              source={require('../../Assets/home/learningResource.png')}
+            />
+            <Text style={styles.Iconname}>Learnings</Text>
+          </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.options}>
-                        <Image
-                            style={styles.optionImage}
-                            source={require("../../Assets/home/learningResource.png")} />
-                        <Text style={styles.Iconname}>Learnings</Text>
-                    </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.options}
+            onPress={() => {
+              handleNavigation('Planner');
+            }}>
+            <Image
+              style={styles.optionImage}
+              source={require('../../Assets/home/monthlyPlanner.png')}
+            />
+            <Text style={styles.Iconname}>Planner</Text>
+          </TouchableOpacity>
+        </View>
 
-                    <TouchableOpacity style={styles.options}>
-                        <Image
-                            style={styles.optionImage}
-                            source={require("../../Assets/home/monthlyPlanner.png")} />
-                        <Text style={styles.Iconname}>Planner</Text>
-                    </TouchableOpacity>
-
-                </View> */}
-
-        {/* <View style={styles.optionContainer}>
-
-                    <TouchableOpacity style={styles.options}>
-                        <Image
-                            style={styles.optionImage}
-                            source={require("../../Assets/home/contactus.png")} />
-                        <Text style={styles.Iconname}>Contact Us</Text>
-                    </TouchableOpacity>
-                </View> */}
+        <View style={styles.optionContainer}>
+          <TouchableOpacity
+            style={styles.options}
+            onPress={() => {
+              handleNavigation('ContactUs');
+            }}>
+            <Image
+              style={styles.optionImage}
+              source={require('../../Assets/home/contactus.png')}
+            />
+            <Text style={styles.Iconname}>Contact Us</Text>
+          </TouchableOpacity>
+        </View>
       </ScrollView>
 
-      {/* <View style={{ alignItems: 'center', paddingTop: 15 }}>
-                <Image
-                    style={{ width: "80%" }}
-                    source={require("../../Assets/home/seperator.png")} />
-            </View> */}
+      <View style={{alignItems: 'center', paddingTop: 15}}>
+        <Image
+          style={{width: '80%'}}
+          source={require('../../Assets/home/seperator.png')}
+        />
+      </View>
     </View>
   );
 };
@@ -186,13 +227,13 @@ export default ScrollingOptions;
 
 const styles = StyleSheet.create({
   scrollContainer: {
-    // borderColor: "green",
-    // borderWidth: 1,
+    borderColor: 'green',
+    borderWidth: 1,
     flexGrow: 1,
   },
   options: {
-    // borderColor: "red",
-    // borderWidth: 1,
+    borderColor: 'red',
+    borderWidth: 1,
     alignItems: 'center',
     width: 120,
   },

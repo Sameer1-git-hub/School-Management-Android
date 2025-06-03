@@ -17,6 +17,7 @@ const CustomDropdown = ({
 }) => {
 
     const [isOpen, setIsOpen] = useState(false);
+  
 
     useEffect(() => {
         if (activeDropdown !== dropdownName) {

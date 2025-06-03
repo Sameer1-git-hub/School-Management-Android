@@ -12,7 +12,7 @@ const Validations = (UserName, Password) => {
     const passwordSchema = yup.string()
         .required('Password is required')
         .min(5, 'Password should be 6-10 characters')
-        .max(8, 'Password should be 6-10 characters');
+        .max(18, 'Password should be 6-10 characters');
 
     const handleUsernameValidation = () => {
         usernameSchema.validate(UserName)

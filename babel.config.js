@@ -1,11 +1,13 @@
-module.exports = {
-  presets: ['module:metro-react-native-babel-preset'],
-  plugins: [
-    ['module:react-native-dotenv', {
-      "moduleName": "@env",
-      "path": ".env",
-      "allowUndefined": true
-    }],
-  ],
-  plugins: ['react-native-reanimated/plugin'], 
+module.exports = function (api) {
+    api.cache(true);
+    return {
+        plugins: [
+            "nativewind/babel",
+            "@babel/plugin-proposal-export-namespace-from",
+            ["react-native-reanimated/plugin", {
+                "relativeSourceLocation": true,
+            }],
+        ],
+        presets: ["babel-preset-expo"],
+    };
 };

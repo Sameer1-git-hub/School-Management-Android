@@ -17,24 +17,24 @@ const MyDrawer = ({ role, isLoading }) => {
 
     if (isLoading) return <LoadingScreen />
 
-    // const StackByRole = () => {
-    //     if (role === "super admin")
-    //         return <AdminStack />
-    //     if (role === "admin")
-    //         return <AdminStack />
-    //     if (role === "teacher")
-    //         return <TeacherStack />
-    //     if (role === "student")
-    //         return <StudentStack />
-    // }
+    const StackByRole = () => {
+        if (role === "super admin")
+            return <AdminStack />
+        if (role === "admin")
+            return <AdminStack />
+        if (role === "teacher")
+            return <TeacherStack />
+        if (role === "student")
+            return <StudentStack />
+    }
 
-const StackByRole = () => {
-        if (role === "super admin") return <AdminStack />;
-        if (role === "admin") return <AdminStack />;
-        if (role === "teacher") return <TeacherStack />;
-        if (role === "student") return <StudentStack />;
-        return <Text>No valid role</Text>;
-    };
+// const StackByRole = () => {
+//         if (role === "super admin") return <AdminStack />;
+//         if (role === "admin") return <AdminStack />;
+//         if (role === "teacher") return <TeacherStack />;
+//         if (role === "student") return <StudentStack />;
+//         return <Text>No valid role</Text>;
+//     };
 console.log("Drawer Role:", role)
     return (
         <Drawer.Navigator
